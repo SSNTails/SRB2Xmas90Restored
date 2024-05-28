@@ -1495,6 +1495,12 @@ void G_WorldDone (void)
 
 void G_DoWorldDone (void)
 {
+    if (gamemap == 6)
+    {
+        D_StartTitle();
+        return;
+    }
+
     gamestate = GS_LEVEL;
     gamemap = wminfo.next+1;
     G_DoLoadLevel ();
